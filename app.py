@@ -1,9 +1,8 @@
 """
-IHSG Desk — versi publik.
+IHSG Desk.
 
-Panel sederhana untuk menampilkan indikator teknikal dasar pada satu saham.
-Versi ini hanya memuat indikator mentah (SMA, EMA, RSI, MACD, ATR, Bollinger).
-Sistem penilaian, penyaring risiko, dan mesin sinyal tidak disertakan.
+Panel sederhana untuk menampilkan indikator teknikal dasar pada satu saham
+(SMA, EMA, RSI, MACD, ATR, Bollinger).
 """
 from __future__ import annotations
 
@@ -14,7 +13,7 @@ from src.indicators import analyze
 
 st.set_page_config(page_title="IHSG Desk", layout="wide")
 st.title("IHSG Desk")
-st.caption("Indikator teknikal dasar — versi publik")
+st.caption("Indikator teknikal harian")
 
 ticker = st.text_input("Kode saham", value="BBCA.JK")
 periode = st.selectbox("Periode data", ["3mo", "6mo", "1y"], index=1)
@@ -45,7 +44,3 @@ if st.button("Muat data"):
             st.line_chart(df.set_index("date")["close"])
     except Exception as e:
         st.error(f"Gagal memuat data: {e}")
-
-st.divider()
-st.caption("Versi publik ini hanya memuat indikator teknikal. "
-           "Komponen penilaian dan manajemen risiko tidak disertakan.")
