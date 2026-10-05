@@ -2,10 +2,6 @@
 
 Panel sederhana untuk menampilkan indikator teknikal pada saham IDX.
 
-Repositori ini memuat indikator mentah dan kerangka penyimpanan data. Sistem
-penilaian, penyaring risiko, dan mesin sinyal yang dipakai pada aplikasi penuh
-tidak disertakan.
-
 ## Indikator
 
 SMA, EMA, RSI, MACD, ATR, Bollinger, dan rasio volume — dihitung dari deret
@@ -36,11 +32,6 @@ src/indicators/            indikator teknikal
 src/collectors/            pengambil data
 src/storage/schema.sql     skema basis data dasar
 ```
-
-## Catatan
-
-Versi ini hanya menampilkan indikator. Versi lengkap menambahkan penilaian,
-penyaringan risiko, dan pencatatan sinyal.
 
 ## Lisensi
 
