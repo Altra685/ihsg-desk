@@ -1,6 +1,4 @@
--- IHSG Desk — skema dasar (versi publik)
--- Hanya tabel penyimpanan harga. Tabel sinyal, peristiwa, dan jurnal
--- tidak disertakan pada versi ini.
+-- IHSG Desk — skema basis data
 
 CREATE TABLE IF NOT EXISTS meta (
     key   TEXT PRIMARY KEY,
