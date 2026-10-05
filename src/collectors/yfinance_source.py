@@ -1,11 +1,11 @@
-"""Pengambil data harga harian dari sumber publik (yfinance)."""
+"""Daily price fetching from a public source (yfinance)."""
 from __future__ import annotations
 
 from typing import Sequence
 
 
 def fetch_daily(ticker: str, period: str = "6mo"):
-    """Ambil OHLCV harian. Mengembalikan list of dict."""
+    """Fetch daily OHLCV. Returns a list of dicts."""
     import yfinance as yf
 
     df = yf.Ticker(ticker).history(period=period, interval="1d")
@@ -23,7 +23,7 @@ def fetch_daily(ticker: str, period: str = "6mo"):
 
 
 def load_csv(path: str) -> list[dict]:
-    """Baca OHLCV dari CSV. Kolom: date,open,high,low,close,volume."""
+    """Read OHLCV from a CSV. Columns: date,open,high,low,close,volume."""
     import csv
 
     out: list[dict] = []
