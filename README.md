@@ -1,13 +1,13 @@
 # IHSG Desk
 
-Panel sederhana untuk menampilkan indikator teknikal pada saham IDX.
+A small dashboard for displaying technical indicators on IDX stocks.
 
-## Indikator
+## Indicators
 
-SMA, EMA, RSI, MACD, ATR, Bollinger, dan rasio volume — dihitung dari deret
-harga penutupan.
+SMA, EMA, RSI, MACD, ATR, Bollinger Bands, and volume ratio — computed from the
+closing price series.
 
-## Menjalankan
+## Running
 
 ```bash
 python -m venv .venv
@@ -16,23 +16,23 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Masukkan kode saham (misalnya `BBCA.JK`), pilih periode, lalu tekan **Muat data**.
+Enter a ticker (for example `BBCA.JK`), pick a period, then press **Load data**.
 
-## Sumber data
+## Data source
 
-Harga harian diambil dari sumber publik melalui `yfinance`. Untuk data dari
-berkas sendiri, gunakan `src/collectors/yfinance_source.py::load_csv` dengan
-kolom `date,open,high,low,close,volume`.
+Daily prices are fetched from a public source through `yfinance`. To use your
+own file, call `src/collectors/yfinance_source.py::load_csv` with the columns
+`date,open,high,low,close,volume`.
 
-## Struktur
+## Structure
 
 ```
-app.py                     aplikasi Streamlit
-src/indicators/            indikator teknikal
-src/collectors/            pengambil data
-src/storage/schema.sql     skema basis data dasar
+app.py                     Streamlit application
+src/indicators/            technical indicators
+src/collectors/            data fetching
+src/storage/schema.sql     base database schema
 ```
 
-## Lisensi
+## License
 
 MIT.
